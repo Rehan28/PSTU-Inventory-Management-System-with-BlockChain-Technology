@@ -1,4 +1,3 @@
-
 .env
 .env.local
 .env.production
@@ -8,10 +7,18 @@ npm-debug.log*
 yarn-error.log*
 
 backend/node_modules/
-
 backend/.env
 
 frontend/node_modules/
 frontend/.env
 
+dist/
+build/
+
 *.db
+*.sqlite
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
