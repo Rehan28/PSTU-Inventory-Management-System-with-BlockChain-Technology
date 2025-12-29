@@ -80,58 +80,53 @@ Create new departments with validation.
 
 ![Create Department](frontend/public/screenshots/createdep.png)
 
-### 6. Suppliers
 
-Manage suppliers and link them with items.
-
-![Suppliers](frontend/public/screenshots/suppliers.png)
-
-### 7. Stock In
+### 6. Stock In
 
 Receive items and increase inventory.
 
 ![Stock In](frontend/public/screenshots/stockin.png)
 ![Stock In History](frontend/public/screenshots/stockinHistory.png)
 
-### 8. Stock Out
+### 7. Stock Out
 
 Issue items and reduce inventory.
 
 ![Stock Out](frontend/public/screenshots/stockout.png)
 
-### 9. Stock In Requests
+### 8. Stock In Requests
 
 Pending, approved and rejected stock-in requests.
 
 ![Stock In Requests](frontend/public/screenshots/stockinreq.png)
 
-### 10. Dead Requests
+### 9. Dead Requests
 
 Dead stock and rejected request reports.
 
 ![Dead Requests](frontend/public/screenshots/stockinreq.png)
 
 
-### 11. User Dashboard
+### 10. User Dashboard
 
 User DashBoard
 
 ![User Dashboard](frontend/public/screenshots/userDas.png)
 
-### 12. User Stock In Request
+### 11. User Stock In Request
 
 User Stock In Request with image verification
 
 ![Offices](frontend/public/screenshots/stockinreq.png)
 
-### 13. Reports
+### 12. Reports
 
 Generate and export inventory reports.
 
 ![Reports](frontend/public/screenshots/report.png)
 ![Reports PDF](frontend/public/screenshots/reportpdf.png)
 
-### 14. Blockchain / Block Page
+### 13. Blockchain / Block Page
 
 View block history and verify integrity.
 
