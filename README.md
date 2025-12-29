@@ -28,7 +28,6 @@
 11. [Testing & Troubleshooting](#testing--troubleshooting)
 12. [Roadmap & TODOs](#roadmap--todos)
 13. [Contributing](#contributing)
-14. [Maintainer](#Maintainer)
 
 ---
 
@@ -130,7 +129,7 @@ Generate and export inventory reports.
 
 View block history and verify integrity.
 
-![Blockchain](frontend/public/screenshots/block_page.png)
+![Blockchain](frontend/public/screenshots/block.png)
 
 ---
 
