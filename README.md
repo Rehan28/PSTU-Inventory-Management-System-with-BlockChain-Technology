@@ -28,7 +28,7 @@
 11. [Testing & Troubleshooting](#testing--troubleshooting)
 12. [Roadmap & TODOs](#roadmap--todos)
 13. [Contributing](#contributing)
-14. [License & Contact](#license--contact)
+14. [Maintainer](#Maintainer)
 
 ---
 
