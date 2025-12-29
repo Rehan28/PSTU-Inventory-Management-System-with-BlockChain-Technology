@@ -111,32 +111,27 @@ Dead stock and rejected request reports.
 
 ![Dead Requests](frontend/public/screenshots/stockinreq.png)
 
-### 11. Dead Stock
 
-Mark obsolete or damaged items.
+### 11. User Dashboard
 
-![Dead Stock](frontend/public/screenshots/dead-stock.png)
+User DashBoard
 
-### 12. Departments
+![User Dashboard](frontend/public/screenshots/userDas.png)
 
-Manage departments.
+### 12. User Stock In Request
 
-![Departments](frontend/public/screenshots/departments.png)
+User Stock In Request with image verification
 
-### 13. Offices
+![Offices](frontend/public/screenshots/stockinreq.png)
 
-Manage office locations.
-
-![Offices](frontend/public/screenshots/offices.png)
-
-### 14. Reports
+### 13. Reports
 
 Generate and export inventory reports.
 
 ![Reports](frontend/public/screenshots/report.png)
 ![Reports PDF](frontend/public/screenshots/reportpdf.png)
 
-### 15. Blockchain / Block Page
+### 14. Blockchain / Block Page
 
 View block history and verify integrity.
 
@@ -203,20 +198,13 @@ MONGO_URI=mongodb+srv://<user>:<pass>@cluster
 PORT=5000
 BLOCKCHAIN_SIGNING_KEY=your_signing_key
 REACT_APP_API_URL=http://localhost:5000/api
-```env
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/pstu_inventory
-JWT_SECRET=your_jwt_secret_here
-BLOCKCHAIN_PATH=./block_chain/data.json
+
 ````
 
 For frontend (`frontend/.env.local`):
 
 ````env
 NEXT_PUBLIC_API_URL=http://localhost:5000
-```env
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
-NEXTAUTH_SECRET=your_frontend_secret_if_used
 ````
 
 ### Run Backend
@@ -256,17 +244,7 @@ npm run dev
 * `POST /api/deadstocks/create` — Record dead/obsolete item
 * `GET /api/blockchain/blocks` — Get block list
 * `POST /api/blockchain/verify` — Verify blockchain integrity
-
-**Example: Create stock-in (curl)**
-
-```bash
-curl -X POST $API_URL/stock-in \
-  -H "Authorization: Bearer <token>" \
-  -H "Content-Type: application/json" \
-  -d '{"itemId":"63f...","quantity":10,"supplierId":"...","receivedBy":"userId","remarks":"Received from supplier"}'
-```
-
-Response: `201 Created` with updated item stock and a blockchain entry object.
+.
 
 ---
 
