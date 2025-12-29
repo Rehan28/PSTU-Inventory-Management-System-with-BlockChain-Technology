@@ -40,7 +40,7 @@ This project is an Inventory Management System tailored for institutions that ne
 * Request and approval workflow for stock movements (stock-in / stock-out).
 * Dead-stock tracking and reporting.
 * Exportable reports and dashboards for administrators.
-* A file-backed blockchain module that stores hashed records of important transactions for tamper-evidence.
+* A SHA‑256 hash–based blockchain-style audit mechanism that stores chained hashes of important transactions for tamper‑evidence.
 
 **Used in production:** The application is deployed at `https://stock.pstu.ac.bd` and is currently in use by PSTU authority. Update environment configs and access controls before deploying elsewhere.
 
@@ -48,7 +48,7 @@ This project is an Inventory Management System tailored for institutions that ne
 
 ## Key Features & Pages
 
-Below are the important pages with screenshots. Images are loaded from `frontend/public/screenshots/`.
+Below are the important pages with screenshots.
 
 ### 1. Admin Dashboard
 
@@ -66,19 +66,19 @@ Authentication with role‑aware redirect.
 
 Create, edit, assign roles and deactivate users.
 
-![Users Management](frontend/public/screenshots/createuser.png)
+![Create User](frontend/public/screenshots/createuser.png)
 
-### 4. Department list
+### 4. Department List
 
-View and manage all inventory items.
+View and manage departments.
 
-![Items](frontend/public/screenshots/alldep.png)
+![Department List](frontend/public/screenshots/alldep.png)
 
 ### 5. Create Department
 
-Detailed item creation with validation.
+Create new departments with validation.
 
-![Create Item](frontend/public/screenshots/createdep.png)
+![Create Department](frontend/public/screenshots/createdep.png)
 
 ### 6. Suppliers
 
@@ -91,7 +91,7 @@ Manage suppliers and link them with items.
 Receive items and increase inventory.
 
 ![Stock In](frontend/public/screenshots/stockin.png)
-![Stock In](frontend/public/screenshots/stockinHistory.png)
+![Stock In History](frontend/public/screenshots/stockinHistory.png)
 
 ### 8. Stock Out
 
@@ -101,13 +101,13 @@ Issue items and reduce inventory.
 
 ### 9. Stock In Requests
 
-Pending, approved and rejected requests.
+Pending, approved and rejected stock-in requests.
 
-![Requests](frontend/public/screenshots/stockinreq.png)
+![Stock In Requests](frontend/public/screenshots/stockinreq.png)
 
 ### 10. Dead Requests
 
-Dead stock Report
+Dead stock and rejected request reports.
 
 ![Dead Requests](frontend/public/screenshots/stockinreq.png)
 
@@ -134,7 +134,7 @@ Manage office locations.
 Generate and export inventory reports.
 
 ![Reports](frontend/public/screenshots/report.png)
-![Reports](frontend/public/screenshots/reportpdf.png)
+![Reports PDF](frontend/public/screenshots/reportpdf.png)
 
 ### 15. Blockchain / Block Page
 
@@ -168,7 +168,7 @@ package.json
 
 Notes:
 
-* `backend/block_chain` contains the file-backed chain logic used by `block_page.js`.
+* `block_page.js` contains SHA‑256 hash chaining and verification logic.
 * `frontend/public/screenshots/` is where images used by the README should live.
 
 ---
@@ -178,7 +178,7 @@ Notes:
 * Frontend: Next.js (App Router), TypeScript, Tailwind CSS
 * Backend: Node.js, Express
 * Database: MongoDB (Mongoose)
-* Blockchain: File-based simple hash-chained blocks
+* Blockchain: SHA‑256 hash–chained audit trail
 * Auth: JWT-based (role middleware)
 
 ---
@@ -195,19 +195,29 @@ Notes:
 
 Create `.env` in `backend/`:
 
+````env
+JWT_SECRET=your_jwt_secret
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_email_password
+MONGO_URI=mongodb+srv://<user>:<pass>@cluster
+PORT=5000
+BLOCKCHAIN_SIGNING_KEY=your_signing_key
+REACT_APP_API_URL=http://localhost:5000/api
 ```env
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/pstu_inventory
 JWT_SECRET=your_jwt_secret_here
 BLOCKCHAIN_PATH=./block_chain/data.json
-```
+````
 
 For frontend (`frontend/.env.local`):
 
+````env
+NEXT_PUBLIC_API_URL=http://localhost:5000
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:5000/api
 NEXTAUTH_SECRET=your_frontend_secret_if_used
-```
+````
 
 ### Run Backend
 
@@ -233,17 +243,17 @@ npm run dev
 > Adapt these to match your actual route names.
 
 * `POST /api/auth/login` — Login; returns JWT
-* `GET /api/users` — List users (admin)
-* `POST /api/users` — Create user (admin)
-* `GET /api/items` — List items (supports `?q`, `?page`)
-* `POST /api/items` — Create item (admin)
+* `GET /api/users/get` — List users (admin)
+* `POST /api/users/create` — Create user (admin)
+* `GET /api/items/get` — List items (supports `?q`, `?page`)
+* `POST /api/items/create` — Create item (admin)
 * `PUT /api/items/:id` — Update item
-* `GET /api/stock-in` — List stock-in records
-* `POST /api/stock-in` — Create stock-in (updates inventory + adds block)
-* `POST /api/stock-out` — Create stock-out (reduces inventory + adds block)
+* `GET /api/stockins/get` — List stock-in records
+* `POST /api/stockins/create` — Create stock-in (updates inventory + adds block)
+* `POST /api/stockouts/create` — Create stock-out (reduces inventory + adds block)
 * `GET /api/requests` — Get requests by status
 * `POST /api/requests/:id/approve` — Approve request
-* `POST /api/dead-stock` — Record dead/obsolete item
+* `POST /api/deadstocks/create` — Record dead/obsolete item
 * `GET /api/blockchain/blocks` — Get block list
 * `POST /api/blockchain/verify` — Verify blockchain integrity
 
@@ -274,12 +284,34 @@ Response: `201 Created` with updated item stock and a blockchain entry object.
 
 ## Blockchain Integration — how it works
 
-1. On critical actions (stock-in, stock-out, approvals, dead-stock) the backend builds a payload describing the event.
-2. The payload is hashed and stored inside a new block appended to the chain file. Each block contains `index`, `timestamp`, `dataHash`, `previousHash`, and `hash` (block header).
-3. `block_page.js` exposes helpers for creating blocks and verifying chain integrity.
-4. Use `GET /api/blockchain/blocks` to view the chain and `POST /api/blockchain/verify` to run verification.
+This system uses a **SHA‑256 hash–based blockchain-style audit mechanism**, not a traditional file-based distributed blockchain.
 
-**Note:** This is a simple, local file-backed chain intended for tamper-evidence and audit trails. For production-grade distributed immutability, consider adding signatures, replication, append-only remote storage, or a consensus layer.
+### How it works
+
+1. When a critical action occurs (stock-in, stock-out, request approval, dead-stock entry), the backend creates a structured transaction payload.
+2. The payload is hashed using the **SHA‑256 algorithm**.
+3. Each record stores:
+
+   * `currentHash` (SHA‑256 of current data)
+   * `previousHash` (hash of the previous transaction)
+4. These hashes are chained logically, creating an **immutable sequence of records**.
+5. Any modification to historical data breaks the hash chain and is immediately detectable during verification.
+
+### What this is (and is not)
+
+* Tamper‑evident audit trail
+* Lightweight and fast (no mining, no consensus overhead)
+* Suitable for institutional inventory systems
+* Not a decentralized cryptocurrency blockchain
+* No proof‑of‑work or peer‑to‑peer consensus
+
+### Verification
+
+* The blockchain page recalculates SHA‑256 hashes and compares them with stored values.
+* If any hash mismatch is found, the system flags the record as **tampered**.
+
+**Why this approach was chosen:**
+It provides blockchain‑like integrity guarantees while remaining simple, performant, and practical for real‑world university inventory management.
 
 ---
 
@@ -297,32 +329,6 @@ Response: `201 Created` with updated item stock and a blockchain entry object.
 
 ---
 
-## Screenshots & Where to add yours
-
-Put real screenshots at `frontend/public/screenshots/` using these filenames:
-
-```
-dashboard.png
-login.png
-users.png
-items.png
-create-item.png
-suppliers.png
-stock-in.png
-stock-out.png
-requests.png
-dead-requests.png
-dead-stock.png
-departments.png
-offices.png
-reports.png
-block_page.png
-banner.png
-```
-
-After adding, `git add` and `git commit` — GitHub will render them in this README.
-
----
 
 ## Testing & Troubleshooting
 
@@ -353,10 +359,5 @@ Please follow code style and add tests where possible.
 
 ---
 
-## License & Contact
 
-MIT License — change if required.
-
-Maintainer: **Your Name / PSTU Team**
-
-If you want, I can also generate a short `CONTRIBUTING.md` or `CHANGELOG.md`, or replace the README image placeholders with screenshots you provide. — tell me which pages/screenshots to add.
+## Maintainer: Rakibul Islam Rehan
