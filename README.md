@@ -1,7 +1,6 @@
 # PSTU Inventory Management System with Blockchain Technology
 
-![Project Banner](.frontend/public/screenshots/banner.png)
-
+![Project Banner](frontend/public/screenshots/banner.png)
 > A full‑stack Inventory Management System built for **Patuakhali Science & Technology University (PSTU)** that integrates a lightweight blockchain module to provide an immutable audit trail for critical inventory actions (stock-in, stock-out, approvals and dead-stock entries).
 
 **Live deployment:** [https://stock.pstu.ac.bd](https://stock.pstu.ac.bd) — currently used by PSTU authority.
