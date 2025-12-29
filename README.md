@@ -1,6 +1,7 @@
 # PSTU Inventory Management System with Blockchain Technology
 
 ![Project Banner](frontend/public/screenshots/banner.png)
+
 > A full‑stack Inventory Management System built for **Patuakhali Science & Technology University (PSTU)** that integrates a lightweight blockchain module to provide an immutable audit trail for critical inventory actions (stock-in, stock-out, approvals and dead-stock entries).
 
 **Live deployment:** [https://stock.pstu.ac.bd](https://stock.pstu.ac.bd) — currently used by PSTU authority.
@@ -9,24 +10,25 @@
 
 ## Table of Contents
 
-1. Project Overview
-2. Key Features & Pages
-3. Architecture & Folder Structure
-4. Tech Stack
-5. Installation & Setup
+1. [Project Overview](#project-overview)
+2. [Key Features & Pages](#key-features--pages)
+3. [Architecture & Folder Structure](#architecture--folder-structure)
+4. [Tech Stack](#tech-stack)
+5. [Installation & Setup](#installation--setup)
 
-   * Prerequisites
-   * Environment Variables
-   * Run Locally (Backend & Frontend)
-6. Backend — API Reference (common endpoints)
-7. Data Models (summary)
-8. Blockchain Integration — how it works
-9. User Flows & Interaction Details
-10. Screenshots & Where to add yours
-11. Testing & Troubleshooting
-12. Roadmap & TODOs
-13. Contributing
-14. License & Contact
+   * [Prerequisites](#prerequisites)
+   * [Environment Variables](#environment-variables)
+   * [Run Backend](#run-backend)
+   * [Run Frontend](#run-frontend)
+6. [Backend — API Reference](#backend--api-reference-common-endpoints)
+7. [Data Models (summary)](#data-models-summary)
+8. [Blockchain Integration — how it works](#blockchain-integration--how-it-works)
+9. [User Flows](#user-flows-short)
+10. [Screenshots](#screenshots--where-to-add-yours)
+11. [Testing & Troubleshooting](#testing--troubleshooting)
+12. [Roadmap & TODOs](#roadmap--todos)
+13. [Contributing](#contributing)
+14. [License & Contact](#license--contact)
 
 ---
 
@@ -52,91 +54,91 @@ Below are the important pages with screenshots. Images are loaded from `frontend
 
 Summary of total items, suppliers, requests and stock levels.
 
-![Admin Dashboard](./frontend/public/screenshots/dashboard.png)
+![Admin Dashboard](frontend/public/screenshots/dashboard.png)
 
 ### 2. Login
 
-Authentication with role-aware redirect.
+Authentication with role‑aware redirect.
 
-![Login](./frontend/public/screenshots/login.png)
+![Login](frontend/public/screenshots/login.png)
 
 ### 3. Users Management
 
 Create, edit, assign roles and deactivate users.
 
-![Users Management](./frontend/public/screenshots/users.png)
+![Users Management](frontend/public/screenshots/users.png)
 
 ### 4. Items List
 
 View and manage all inventory items.
 
-![Items](./frontend/public/screenshots/items.png)
+![Items](frontend/public/screenshots/items.png)
 
 ### 5. Create Item
 
 Detailed item creation with validation.
 
-![Create Item](./frontend/public/screenshots/create-item.png)
+![Create Item](frontend/public/screenshots/create-item.png)
 
 ### 6. Suppliers
 
 Manage suppliers and link them with items.
 
-![Suppliers](./frontend/public/screenshots/suppliers.png)
+![Suppliers](frontend/public/screenshots/suppliers.png)
 
 ### 7. Stock In
 
 Receive items and increase inventory.
 
-![Stock In](./frontend/public/screenshots/stock-in.png)
+![Stock In](frontend/public/screenshots/stock-in.png)
 
 ### 8. Stock Out
 
 Issue items and reduce inventory.
 
-![Stock Out](./frontend/public/screenshots/stock-out.png)
+![Stock Out](frontend/public/screenshots/stock-out.png)
 
 ### 9. Requests
 
 Pending, approved and rejected requests.
 
-![Requests](./frontend/public/screenshots/requests.png)
+![Requests](frontend/public/screenshots/requests.png)
 
 ### 10. Dead Requests
 
 Cancelled or failed requests.
 
-![Dead Requests](./frontend/public/screenshots/dead-requests.png)
+![Dead Requests](frontend/public/screenshots/dead-requests.png)
 
 ### 11. Dead Stock
 
 Mark obsolete or damaged items.
 
-![Dead Stock](./frontend/public/screenshots/dead-stock.png)
+![Dead Stock](frontend/public/screenshots/dead-stock.png)
 
 ### 12. Departments
 
 Manage departments.
 
-![Departments](./frontend/public/screenshots/departments.png)
+![Departments](frontend/public/screenshots/departments.png)
 
 ### 13. Offices
 
 Manage office locations.
 
-![Offices](./frontend/public/screenshots/offices.png)
+![Offices](frontend/public/screenshots/offices.png)
 
 ### 14. Reports
 
 Generate and export inventory reports.
 
-![Reports](./frontend/public/screenshots/reports.png)
+![Reports](frontend/public/screenshots/reports.png)
 
 ### 15. Blockchain / Block Page
 
 View block history and verify integrity.
 
-![Blockchain](./frontend/public/screenshots/block_page.png)
+![Blockchain](frontend/public/screenshots/block_page.png)
 
 ---
 
