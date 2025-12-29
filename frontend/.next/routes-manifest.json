@@ -1,0 +1,259 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/admin/block_chain",
+      "regex": "^/admin/block_chain(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/block_chain(?:/)?$"
+    },
+    {
+      "page": "/admin/dashboard",
+      "regex": "^/admin/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/dashboard(?:/)?$"
+    },
+    {
+      "page": "/admin/dead-stock",
+      "regex": "^/admin/dead\\-stock(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/dead\\-stock(?:/)?$"
+    },
+    {
+      "page": "/admin/dead-stock/create",
+      "regex": "^/admin/dead\\-stock/create(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/dead\\-stock/create(?:/)?$"
+    },
+    {
+      "page": "/admin/deadRequests",
+      "regex": "^/admin/deadRequests(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/deadRequests(?:/)?$"
+    },
+    {
+      "page": "/admin/departments",
+      "regex": "^/admin/departments(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/departments(?:/)?$"
+    },
+    {
+      "page": "/admin/departments/create",
+      "regex": "^/admin/departments/create(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/departments/create(?:/)?$"
+    },
+    {
+      "page": "/admin/items",
+      "regex": "^/admin/items(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/items(?:/)?$"
+    },
+    {
+      "page": "/admin/items/create",
+      "regex": "^/admin/items/create(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/items/create(?:/)?$"
+    },
+    {
+      "page": "/admin/offices",
+      "regex": "^/admin/offices(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/offices(?:/)?$"
+    },
+    {
+      "page": "/admin/offices/create",
+      "regex": "^/admin/offices/create(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/offices/create(?:/)?$"
+    },
+    {
+      "page": "/admin/reports/current-stock",
+      "regex": "^/admin/reports/current\\-stock(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/reports/current\\-stock(?:/)?$"
+    },
+    {
+      "page": "/admin/reports/department",
+      "regex": "^/admin/reports/department(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/reports/department(?:/)?$"
+    },
+    {
+      "page": "/admin/reports/office",
+      "regex": "^/admin/reports/office(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/reports/office(?:/)?$"
+    },
+    {
+      "page": "/admin/reports/user",
+      "regex": "^/admin/reports/user(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/reports/user(?:/)?$"
+    },
+    {
+      "page": "/admin/requests",
+      "regex": "^/admin/requests(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/requests(?:/)?$"
+    },
+    {
+      "page": "/admin/stock-in",
+      "regex": "^/admin/stock\\-in(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/stock\\-in(?:/)?$"
+    },
+    {
+      "page": "/admin/stock-in/create",
+      "regex": "^/admin/stock\\-in/create(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/stock\\-in/create(?:/)?$"
+    },
+    {
+      "page": "/admin/stock-in/current-stock",
+      "regex": "^/admin/stock\\-in/current\\-stock(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/stock\\-in/current\\-stock(?:/)?$"
+    },
+    {
+      "page": "/admin/stock-out",
+      "regex": "^/admin/stock\\-out(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/stock\\-out(?:/)?$"
+    },
+    {
+      "page": "/admin/stock-out/create",
+      "regex": "^/admin/stock\\-out/create(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/stock\\-out/create(?:/)?$"
+    },
+    {
+      "page": "/admin/stock-out/current-stock",
+      "regex": "^/admin/stock\\-out/current\\-stock(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/stock\\-out/current\\-stock(?:/)?$"
+    },
+    {
+      "page": "/admin/suppliers",
+      "regex": "^/admin/suppliers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/suppliers(?:/)?$"
+    },
+    {
+      "page": "/admin/suppliers/create",
+      "regex": "^/admin/suppliers/create(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/suppliers/create(?:/)?$"
+    },
+    {
+      "page": "/admin/users/create",
+      "regex": "^/admin/users/create(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/users/create(?:/)?$"
+    },
+    {
+      "page": "/admin/users/staff",
+      "regex": "^/admin/users/staff(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/users/staff(?:/)?$"
+    },
+    {
+      "page": "/admin/users/teachers",
+      "regex": "^/admin/users/teachers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/users/teachers(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/login",
+      "regex": "^/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/login(?:/)?$"
+    },
+    {
+      "page": "/user/CreateItem",
+      "regex": "^/user/CreateItem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/user/CreateItem(?:/)?$"
+    },
+    {
+      "page": "/user/dashboard",
+      "regex": "^/user/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/user/dashboard(?:/)?$"
+    },
+    {
+      "page": "/user/deadStockReport",
+      "regex": "^/user/deadStockReport(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/user/deadStockReport(?:/)?$"
+    },
+    {
+      "page": "/user/stockInRequest",
+      "regex": "^/user/stockInRequest(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/user/stockInRequest(?:/)?$"
+    },
+    {
+      "page": "/user/stockOut",
+      "regex": "^/user/stockOut(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/user/stockOut(?:/)?$"
+    },
+    {
+      "page": "/user/suppliers/create",
+      "regex": "^/user/suppliers/create(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/user/suppliers/create(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "RSC",
+    "varyHeader": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch",
+    "prefetchHeader": "Next-Router-Prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "Next-Router-Segment-Prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  },
+  "rewrites": []
+}
