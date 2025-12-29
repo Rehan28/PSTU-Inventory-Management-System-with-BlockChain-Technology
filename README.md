@@ -62,23 +62,23 @@ Authentication with role‑aware redirect.
 
 ![Login](frontend/public/screenshots/login.png)
 
-### 3. Users Management
+### 3. Create User
 
 Create, edit, assign roles and deactivate users.
 
-![Users Management](frontend/public/screenshots/users.png)
+![Users Management](frontend/public/screenshots/createuser.png)
 
-### 4. Items List
+### 4. Department list
 
 View and manage all inventory items.
 
-![Items](frontend/public/screenshots/items.png)
+![Items](frontend/public/screenshots/alldep.png)
 
-### 5. Create Item
+### 5. Create Department
 
 Detailed item creation with validation.
 
-![Create Item](frontend/public/screenshots/create-item.png)
+![Create Item](frontend/public/screenshots/createdep.png)
 
 ### 6. Suppliers
 
@@ -90,25 +90,26 @@ Manage suppliers and link them with items.
 
 Receive items and increase inventory.
 
-![Stock In](frontend/public/screenshots/stock-in.png)
+![Stock In](frontend/public/screenshots/stockin.png)
+![Stock In](frontend/public/screenshots/stockinHistory.png)
 
 ### 8. Stock Out
 
 Issue items and reduce inventory.
 
-![Stock Out](frontend/public/screenshots/stock-out.png)
+![Stock Out](frontend/public/screenshots/stockout.png)
 
-### 9. Requests
+### 9. Stock In Requests
 
 Pending, approved and rejected requests.
 
-![Requests](frontend/public/screenshots/requests.png)
+![Requests](frontend/public/screenshots/stockinreq.png)
 
 ### 10. Dead Requests
 
-Cancelled or failed requests.
+Dead stock Report
 
-![Dead Requests](frontend/public/screenshots/dead-requests.png)
+![Dead Requests](frontend/public/screenshots/stockinreq.png)
 
 ### 11. Dead Stock
 
@@ -132,7 +133,8 @@ Manage office locations.
 
 Generate and export inventory reports.
 
-![Reports](frontend/public/screenshots/reports.png)
+![Reports](frontend/public/screenshots/report.png)
+![Reports](frontend/public/screenshots/reportpdf.png)
 
 ### 15. Blockchain / Block Page
 
