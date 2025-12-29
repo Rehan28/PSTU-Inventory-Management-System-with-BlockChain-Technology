@@ -1,0 +1,27 @@
+
+.env
+.env.local
+.env.production
+
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+backend/node_modules/
+backend/dist/
+backend/build/
+backend/.env
+
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.env
+
+# =====================
+# Logs
+# =====================
+logs/
+*.log
+
+*.sqlite
+*.db
