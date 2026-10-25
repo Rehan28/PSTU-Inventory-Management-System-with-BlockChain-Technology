@@ -1,0 +1,17 @@
+{
+  "name": "PSTU Inventory Management (Node 20.20.2)",
+  "image": "node:20.20.2-bookworm",
+  "forwardPorts": [3000, 3082, 5000],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss"
+      ]
+    }
+  }
+}

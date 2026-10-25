@@ -1,0 +1,51 @@
+name: Build Frontend & Publish to cPanel Deploy Branch
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'frontend/**'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install & Build Static Frontend
+        env:
+          NEXT_PUBLIC_API_URL: "https://api.stock.pstu.ac.bd"
+        run: |
+          cd frontend
+          npm ci --legacy-peer-deps
+          npm run build
+
+      - name: Add .cpanel.yml to Build Output
+        run: |
+          cat << 'EOF' > frontend/out/.cpanel.yml
+          ---
+          deployment:
+            tasks:
+              - export DEPLOYPATH=/home/stockpstuac/public_html
+              - /bin/cp -R * $DEPLOYPATH/
+          EOF
+
+      - name: Deploy Build to 'frontend-deploy' Branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/out
+          publish_branch: frontend-deploy
+          keep_files: false
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'

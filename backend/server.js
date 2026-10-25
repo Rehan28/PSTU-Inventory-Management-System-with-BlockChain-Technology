@@ -45,7 +45,16 @@ app.get("/api/health", (_req, res) => {
 });
 
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
-app.use(cors());
+
+const corsOptions = process.env.CORS_ORIGIN
+  ? {
+      origin: process.env.CORS_ORIGIN.includes(",")
+        ? process.env.CORS_ORIGIN.split(",").map((o) => o.trim())
+        : process.env.CORS_ORIGIN.trim(),
+      credentials: true,
+    }
+  : {};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/api/departments", departmentRoutes);

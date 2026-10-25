@@ -2,7 +2,8 @@
 // Override at build time with NEXT_PUBLIC_API_URL (without /api).
 export const API_ORIGIN = (
   process.env.NEXT_PUBLIC_API_URL ||
-  "https://pstu-inventory-management-system-with-ywv1.onrender.com"
+  // "https://pstu-inventory-management-system-with-ywv1.onrender.com"
+  "https://api.stock.pstu.ac.bd"
 ).replace(/\/+$/, "")
 
 // All backend endpoints live here. Pages import API_ROUTES instead of building URLs.
