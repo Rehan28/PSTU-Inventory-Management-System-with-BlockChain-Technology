@@ -2,10 +2,11 @@
   "name": "pstu_inventory_management",
   "version": "1.0.0",
   "type": "module",
-  "main": "server.js",
+  "main": "server.cjs",
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
+    "deploy": "node server.cjs",
     "test": "node --test"
   },
   "keywords": [],
